@@ -8,7 +8,7 @@ type TodoItemProps = {
   todo: Todo
 }
 
-export const TodoItem: FC<TodoItemProps> = memo(({ todo }): ReactElement => {
+const TodoItemComponent: FC<TodoItemProps> = ({ todo }): ReactElement => {
   const { onRemove, onComplete } = useTodoActions();
 
   return (
@@ -25,4 +25,6 @@ export const TodoItem: FC<TodoItemProps> = memo(({ todo }): ReactElement => {
       </p>
     </div>
   );
-});
+};
+
+export const TodoItem = memo(TodoItemComponent);

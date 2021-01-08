@@ -15,7 +15,7 @@ export const fetchTodos = async (): Promise<Todos> => {
       }
     });
 
-    return response.data;
+    return response.data as Todos;
   } catch (error) {
     throw new ServerError(
       error.response.status,
